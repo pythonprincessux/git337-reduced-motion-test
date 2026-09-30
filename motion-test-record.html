@@ -111,7 +111,8 @@
             <tr>
                 <td>Legibility over affected surfaces</td>
                 <td>Text and controls should stll be legible when the shadows and other visual effects are there.</td>
-                <td>Text was still clearly readable with the action shadow and selection inset shadow applied. No effects
+                <td>Text was still clearly readable with the action shadow and selection inset shadow applied. No
+                    effects
                     were hidden or reduced the legibility of labels or content. This prototype does not use gradients,
                     filters, masks, or blended surfaces here.</td>
                 <td>Pass</td>
@@ -119,19 +120,26 @@
             </tr>
             <tr>
                 <td>Performance recording: layout/paint/composition</td>
-                <td>[Expected]</td>
-                <td>[Observed]</td>
-                <td>[Result]</td>
-                <td>[Action]</td>
+                <td>Using the prototype effects should not produce an excessive layout, paint, or
+                    composition work.</td>
+                <td>I ran a Performance panel recording in devtools while activating the action, selection, and the
+                    disclosure showed brief
+                    rendering and painting activity during the interactions, with no performance
+                    issues or errors. Chrome showed me 18 passed insights, INP of 28 ms, and CLS of 0 though I am
+                    unclear about the exact breakdown of each metric from just memory.</td>
+                <td>Pass</td>
+                <td>No additional performance repair needed.</td>
             </tr>
         </tbody>
     </table>
     <h2>Evidence</h2>
-    <p><strong>Focus screenshot filename and what it proves:</strong> [Response]</p>
-    <p><strong>Reduced-motion screenshot filename and what it proves:</strong> [Response]</p>
+    <p><strong>Focus screenshot filename and what it proves:</strong> evidence/focus-visible.png: Clearly shows us a 
+        blue, visible keyboard focus indicator around the review registration action.</p>
+    <p><strong>Reduced-motion screenshot filename and what it proves:</strong> evidence/reduced-motion.png: Shows the
+        prototype with prefers-reduced-motion: reduce emulated while the content is still visible and usable
+        without the animation as shown in devtools.</p>
     <h2>Repair and retest</h2>
-    <p>[Identify the issue, exact CSS changed, and observed retest result. If all tests passed, describe the strongest
-        specific evidence.]</p>
+   <p>In my first assignment, the container width originally used width:min(100% - 2rem,65rem), which gave me a CSS validation issue in vs code. I repaired it to width:min(calc(100% - 2rem),65rem). I retested the repaired prototype at 200% zoom and a 320px viewport. The content flowed correctly without clipping or overlap, and focus indicators were still visible after making that change to my stylesheet.</p>
 </body>
 
 </html>
